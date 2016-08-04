@@ -1,6 +1,6 @@
 # -*- coding=utf8 -*-
 """
-    异步任务类
+    寮傛浠诲姟绫�
 """
 import logging
 import requests
@@ -14,11 +14,11 @@ LOGGER = logging.getLogger(__name__)
 
 @app.task
 def download_pic(image_url, image_path):
-    """异步下载图片
+    """寮傛涓嬭浇鍥剧墖
 
     Args:
-        image_url (string): 图片链接
-        image_path (string): 图片路径
+        image_url (string): 鍥剧墖閾炬帴
+        image_path (string): 鍥剧墖璺緞
     """
     if not (image_url and image_path):
         LOGGER.INFO('illegal parameter')

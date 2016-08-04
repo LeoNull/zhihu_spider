@@ -16,7 +16,7 @@ from zhihu.constants import Gender, People, HEADER
 class ZhihuSipder(CrawlSpider):
     name = "zhihu"
     allowed_domains = ["www.zhihu.com"]
-    start_url = "https://www.zhihu.com/people/weizhi-xiazhi"
+    start_url = "https://www.zhihu.com/people/leo-63-45"
 
     def __init__(self, *args, **kwargs):
         super(ZhihuSipder, self).__init__(*args, **kwargs)
@@ -45,8 +45,8 @@ class ZhihuSipder(CrawlSpider):
             meta={'cookiejar': response.meta['cookiejar']},
             formdata={
                 '_xsrf': self.xsrf,
-                'email': 'xxxxxxxxx',
-                'password': 'xxxxxxxxx',
+                'email': '820073786@qq.com',
+                'password': '19920611cl',
                 'remember_me': 'true'},
             callback=self.after_login
         )]
