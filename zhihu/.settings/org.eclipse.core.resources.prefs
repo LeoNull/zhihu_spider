@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//zhihu/constants.py=utf8
+encoding//zhihu/items.py=utf-8
+encoding//zhihu/pipelines.py=utf-8
+encoding//zhihu/settings.py=utf-8
+encoding//zhihu/spiders/profile.py=utf8
+encoding//zhihu/spiders/zhihulogin.py=utf8
+encoding//zhihu/tools/async.py=utf8

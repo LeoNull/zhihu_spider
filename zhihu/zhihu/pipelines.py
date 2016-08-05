@@ -1,17 +1,31 @@
 # -*- coding: utf-8 -*-
+#!/usr/bin/python
 
 # Define your item pipelines here
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import os
-
 from pymongo import MongoClient
-from zhihu.settings import MONGO_URI, PROJECT_DIR
+from zhihu.settings import MONGO_URI,PROJECT_DIR,TEXT_STORE
 from zhihu.items import ZhihuPeopleItem, ZhihuRelationItem
 from zhihu.tools.async import download_pic
-
-
+import json
+class ZhihuPeople(object):
+  
+    def process_item(self, item, spider):
+        
+        path='%s/user'%TEXT_STORE
+        
+        if not os.path.exists(path):
+                os.makedirs(path)
+                
+        zh_user_file =open('%s/m.txt'%path, 'wb')
+        
+        zh_user_file.write(json.dumps(dict(item), ensure_ascii=False).encode('utf8') + '\n')
+        zh_user_file.close()
+        
+        
 class ZhihuPipeline(object):
     """
     存储数据

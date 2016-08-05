@@ -39,6 +39,7 @@ class ZhihuSipder(CrawlSpider):
         self.xsrf = Selector(response).xpath(
             '//input[@name="_xsrf"]/@value'
         ).extract()[0]
+        print self.xsrf
         return [FormRequest(
             'https://www.zhihu.com/login/email',
             method='POST',
@@ -68,7 +69,7 @@ class ZhihuSipder(CrawlSpider):
         """
         selector = Selector(response)
         nickname=selector.xpath(
-            '//div[@class="title-section ellipsis"]/span[@class="name"]/text()'
+            '//div[@class="title-section"]/span[@class="name"]/text()'
         ).extract_first()
         zhihu_id=os.path.split(response.url)[-1]
         location=selector.xpath(
@@ -89,8 +90,9 @@ class ZhihuSipder(CrawlSpider):
             '//span[@class="position item"]/@title'
         ).extract_first()
         education = selector.xpath(
-            '//span[@class="education-extra item"]/@title'
+            '//span[@class="education item"]/@title'
         ).extract_first()
+        
         followee_count, follower_count = tuple(selector.xpath(
             '//div[@class="zm-profile-side-following zg-clear"]/a[@class="item"]/strong/text()'
         ).extract())

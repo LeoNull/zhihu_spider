@@ -100,9 +100,12 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(os.path.curdir))
 # mongodb配置
 MONGO_URI = 'mongodb://localhost:27017'
 
+TEXT_STORE='/data'
+
 # pipeline设置
 ITEM_PIPELINES = {
-    'zhihu.pipelines.ZhihuPipeline': 500,
+    #'zhihu.pipelines.ZhihuPipeline': 500,
+    'zhihu.pipelines.ZhihuPeople': 2,
 }
 
 # 异步任务队列
