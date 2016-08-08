@@ -46,48 +46,6 @@ DEFAULT_REQUEST_HEADERS = {
   'Connection': 'keep-alive'
 }
 
-# Enable or disable spider middlewares
-# See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'zhihu.middlewares.MyCustomSpiderMiddleware': 543,
-#}
-
-# Enable or disable downloader middlewares
-# See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'zhihu.middlewares.MyCustomDownloaderMiddleware': 543,
-#}
-
-# Enable or disable extensions
-# See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
-#    'scrapy.telnet.TelnetConsole': None,
-#}
-
-# Configure item pipelines
-# See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'zhihu.pipelines.SomePipeline': 300,
-#}
-
-# Enable and configure the AutoThrottle extension (disabled by default)
-# See http://doc.scrapy.org/en/latest/topics/autothrottle.html
-# NOTE: AutoThrottle will honour the standard settings for concurrency and delay
-#AUTOTHROTTLE_ENABLED=True
-# The initial download delay
-#AUTOTHROTTLE_START_DELAY=5
-# The maximum download delay to be set in case of high latencies
-#AUTOTHROTTLE_MAX_DELAY=60
-# Enable showing throttling stats for every response received:
-#AUTOTHROTTLE_DEBUG=False
-
-# Enable and configure HTTP caching (disabled by default)
-# See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
-#HTTPCACHE_ENABLED=True
-#HTTPCACHE_EXPIRATION_SECS=0
-#HTTPCACHE_DIR='httpcache'
-#HTTPCACHE_IGNORE_HTTP_CODES=[]
-#HTTPCACHE_STORAGE='scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 # 广度优先
 DEPTH_PRIORITY = 1
@@ -100,7 +58,7 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(os.path.curdir))
 # mongodb配置
 MONGO_URI = 'mongodb://localhost:27017'
 
-TEXT_STORE='/data'
+TEXT_STORE='F:/data'
 
 # pipeline设置
 ITEM_PIPELINES = {

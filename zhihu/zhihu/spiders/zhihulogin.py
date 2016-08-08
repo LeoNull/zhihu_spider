@@ -55,6 +55,7 @@ class Zhihulogin(CrawlSpider):
         nickname=selector.xpath(
             '//div[@class="title-section"]/span[@class="name"]/text()'
         ).extract_first()
+        
         zhihu_id=os.path.split(response.url)[-1]
         location=selector.xpath(
             '//span[@class="location item"]/@title'
